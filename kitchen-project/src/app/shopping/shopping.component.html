@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-5">
-        <app-shopping-list></app-shopping-list>
+        <app-shopping-list
+        (ingredientAdded)="onIngredientAdded($event)"></app-shopping-list>
         <hr>
        <ul class="list-group">
            <a 
