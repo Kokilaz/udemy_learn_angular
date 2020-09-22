@@ -7,9 +7,10 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-@ViewChild('nameInput') nameInputRef: ElementRef;
-@ViewChild('amountInput') amountInputRef: ElementRef;
-@Output() ingredientsAdded = new EventEmitter<Ingredient>();
+@ViewChild('nameInput', {static: false}) nameInputRef: ElementRef;
+@ViewChild('amountInput', {static: false}) amountInputRef: ElementRef;
+@Output() ingredientAdded = new EventEmitter<Ingredient>();
+
   constructor() { }
 
   ngOnInit() {
@@ -18,7 +19,7 @@ export class ShoppingListComponent implements OnInit {
 const ingName = this.nameInputRef.nativeElement.value;
 const ingAmount = this.amountInputRef.nativeElement.value;
 const newIngredient = new Ingredient(ingName, ingAmount);
-this.ingredientsAdded.emit(newIngredient);
+this.ingredientAdded.emit(newIngredient);
   }
 
 }

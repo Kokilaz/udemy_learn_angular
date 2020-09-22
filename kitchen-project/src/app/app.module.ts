@@ -25,7 +25,8 @@ import { ShoppingListEditComponent} from './shopping/shopping-list-edit/shopping
     
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
